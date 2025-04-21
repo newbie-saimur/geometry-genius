@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genius</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        .font-poppins {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="w-full max-w-[113.75rem] mx-auto font-poppins">
+    <header>
+        <nav
+            class="flex justify-between items-center bg-[rgba(16,144,216,0.10)] py-[1.12rem] px-3 md:px-[2.63rem] rounded-lg my-4 md:my-8 lg:my-[3.12rem]">
+            <div>
+                <img src="images/logo.png" alt="" class="w-full max-w-1/2">
+            </div>
+            <div>
+                <button
+                    class="px-[2.38rem] py-[0.56rem] text-xl leading-[1.875rem] font-bold text-white  btn btn-info">Blog</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-12 px-2 md:px-4 lg:px-0 mb-4">
+            <!-- Triangle Card -->
+            <div
+                class="flex flex-col w-full shadow-sm justify-center text-center hover:bg-[#FBBCED] px-[2.7rem] py-[3.12rem] rounded-lg border border-[rgba(17,17,17,0.10)]">
+                <img src="images/triangle.png" alt="triangle"
+                    class="rounded-xl mb-[3.06rem] h-[12.125rem] xl:h-[15rem]" />
+                <h2 class="text[1.5625rem] text-[#414141] font-bold mb-[0.62rem]">Triangle</h2>
+                <p class="mb-[1.38rem] text-base text-[#414141] font-normal">Area (A) = 0.5 X b X h</p>
+                <div class="flex gap-5 items-center justify-center mb-6">
+                    <div>
+                        <input id="triangle-base"
+                            class="w-24 text-base font-normal text-[#414141] bg-[#F1F1F1] rounded-[0.25rem] border-none py-3 px-4"
+                            type="text" placeholder="b">
+                        <span class="mb-[1.38rem] text-base text-[#414141] font-normal ml-1">cm</span>
+                    </div>
+                    <div>
+                        <input id="triangle-height"
+                            class="w-24 text-base font-normal text-[#414141] bg-[#F1F1F1] rounded-[0.25rem] border-none py-3 px-4"
+                            type="text" placeholder="h">
+                        <span class="mb-[1.38rem] text-base text-[#414141] font-normal ml-1">cm</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="mb-[1.38rem] text-base text-[#414141] font-normal">Area:<span class="ml-12 mr-2"
+                            id="triangle-area"></span>cm<sup>2</sup></p>
+                </div>
+                <button id="triangle-btn"
+                    class="hover:bg-[#0b79b0] transition duration-300 cursor-pointer w-full py-4 text-xl font-bold text-white bg-[#1090D8] rounded-lg">Calculate</button>
+            </div>
+            <!-- Rectangle Card -->
+            <div
+                class="flex flex-col w-full shadow-sm justify-center text-center hover:bg-[#69C7F0] px-[2.7rem] py-[3.12rem] rounded-lg border border-[rgba(17,17,17,0.10)]">
+                <img src="images/rectangle.png" alt="rectangle"
+                    class="rounded-xl mb-[3.06rem] h-[12.125rem] xl:h-[15rem]" />
+                <h2 class="text[1.5625rem] text-[#414141] font-bold mb-[0.62rem]">Rectangle</h2>
+                <p class="mb-[1.38rem] text-base text-[#414141] font-normal">Area (A) = w X l</p>
+                <div class="flex gap-5 items-center justify-center mb-6">
+                    <div>
+                        <input id="rectangle-width"
+                            class="w-24 text-base font-normal text-[#414141] bg-[#F1F1F1] rounded-[0.25rem] border-none py-3 px-4"
+                            type="text" placeholder="w">
+                        <span class="mb-[1.38rem] text-base text-[#414141] font-normal ml-1">cm</span>
+                    </div>
+                    <div>
+                        <input id="rectangle-length"
+                            class="w-24 text-base font-normal text-[#414141] bg-[#F1F1F1] rounded-[0.25rem] border-none py-3 px-4"
+                            type="text" placeholder="l">
+                        <span class="mb-[1.38rem] text-base text-[#414141] font-normal ml-1">cm</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="mb-[1.38rem] text-base text-[#414141] font-normal">Area:<span id="rectangle-area"
+                            class="ml-12 mr-2"></span>cm<sup>2</sup></p>
+                </div>
+                <button id="rectangle-btn"
+                    class="hover:bg-[#0b79b0] transition duration-300 cursor-pointer w-full py-4 text-xl font-bold text-white bg-[#1090D8] rounded-lg">Calculate</button>
+            </div>
+            <!-- Parrallelogram Card -->
+            <div
+                class="flex flex-col w-full shadow-sm justify-center text-center hover:bg-[#FFDFAF] px-[2.7rem] py-[3.12rem] rounded-lg border border-[rgba(17,17,17,0.10)]">
+                <img src="images/parallelogram.png" alt="parallelogram"
+                    class="rounded-xl mb-[3.06rem] h-[12.125rem] xl:h-[15rem]" />
+                <h2 class="text[1.5625rem] text-[#414141] font-bold mb-[0.62rem]">Parallelogram</h2>
+                <p class="mb-[1.38rem] text-base text-[#414141] font-normal">Area (A) = b X h</p>
+                <div class="flex gap-5 items-center justify-center mb-6">
+                    <div>
+                        <input id="parallelogram-base"
+                            class="w-24 text-base font-normal text-[#414141] bg-[#F1F1F1] rounded-[0.25rem] border-none py-3 px-4"
+                            type="text" placeholder="b">
+                        <span class="mb-[1.38rem] text-base text-[#414141] font-normal ml-1">cm</span>
+                    </div>
+                    <div>
+                        <input id="parallelogram-height"
+                            class="w-24 text-base font-normal text-[#414141] bg-[#F1F1F1] rounded-[0.25rem] border-none py-3 px-4"
+                            type="text" placeholder="h">
+                        <span class="mb-[1.38rem] text-base text-[#414141] font-normal ml-1">cm</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="mb-[1.38rem] text-base text-[#414141] font-normal">Area:<span id="parallelogram-area"
+                            class="ml-12 mr-2"></span>cm<sup>2</sup></p>
+                </div>
+                <button id="parallelogram-btn"
+                    class="hover:bg-[#0b79b0] transition duration-300 cursor-pointer w-full py-4 text-xl font-bold text-white bg-[#1090D8] rounded-lg">Calculate</button>
+            </div>
+            <!-- Rhumbus Card -->
+            <div
+                class="flex flex-col w-full shadow-sm justify-center text-center hover:bg-[#C1F5D2] px-[2.7rem] py-[3.12rem] rounded-lg border border-[rgba(17,17,17,0.10)]">
+                <img src="images/rhombus.png" alt="rhombus"
+                    class="rounded-xl mb-[3.06rem] h-[12.125rem] xl:h-[15rem]" />
+                <h2 class="text[1.5625rem] text-[#414141] font-bold mb-[0.62rem]">Rhombus</h2>
+                <p class="mb-[1.38rem] text-base text-[#414141] font-normal">Area (A) = 0.5 X d<sub>1</sub> X
+                    d<sub>2</sub></p>
+                <div class="flex gap-5 items-center justify-center mb-6">
+                    <div>
+                        <input id="rhombus-side1"
+                            class="w-24 text-base font-normal text-[#414141] bg-[#F1F1F1] rounded-[0.25rem] border-none py-3 px-4"
+                            type="text" placeholder="d₁">
+                        <span class="mb-[1.38rem] text-base text-[#414141] font-normal ml-1">cm</span>
+                    </div>
+                    <div>
+                        <input id="rhombus-side2"
+                            class="w-24 text-base font-normal text-[#414141] bg-[#F1F1F1] rounded-[0.25rem] border-none py-3 px-4"
+                            type="text" placeholder="d₂">
+                        <span class="mb-[1.38rem] text-base text-[#414141] font-normal ml-1">cm</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="mb-[1.38rem] text-base text-[#414141] font-normal">Area:<span id="rhombus-area"
+                            class="ml-12 mr-2"></span>cm<sup>2</sup></p>
+                </div>
+                <button id="rhombus-btn"
+                    class="hover:bg-[#0b79b0] transition duration-300 cursor-pointer w-full py-4 text-xl font-bold text-white bg-[#1090D8] rounded-lg">Calculate</button>
+            </div>
+            <!-- Pentagon Card -->
+            <div
+                class="flex flex-col w-full shadow-sm justify-center text-center hover:bg-[#E4D7FB] px-[2.7rem] py-[3.12rem] rounded-lg border border-[rgba(17,17,17,0.10)]">
+                <img src="images/pentagon.png" alt="pentagon"
+                    class="rounded-xl mb-[3.06rem] h-[12.125rem] xl:h-[15rem]" />
+                <h2 class="text[1.5625rem] text-[#414141] font-bold mb-[0.62rem]">Pentagon</h2>
+                <p class="mb-[1.38rem] text-base text-[#414141] font-normal">Area (A) = 0.5 X p X b</p>
+                <div class="flex gap-5 items-center justify-center mb-6">
+                    <div>
+                        <input id="pentagon-perimeter"
+                            class="w-24 text-base font-normal text-[#414141] bg-[#F1F1F1] rounded-[0.25rem] border-none py-3 px-4"
+                            type="text" placeholder="p">
+                        <span class="mb-[1.38rem] text-base text-[#414141] font-normal ml-1">cm</span>
+                    </div>
+                    <div>
+                        <input id="pentagon-apothem"
+                            class="w-24 text-base font-normal text-[#414141] bg-[#F1F1F1] rounded-[0.25rem] border-none py-3 px-4"
+                            type="text" placeholder="b">
+                        <span class="mb-[1.38rem] text-base text-[#414141] font-normal ml-1">cm</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="mb-[1.38rem] text-base text-[#414141] font-normal">Area:<span id="pentagon-area"
+                            class="ml-12 mr-2"></span>cm<sup>2</sup></p>
+                </div>
+                <button id="pentagon-btn"
+                    class="hover:bg-[#0b79b0] transition duration-300 cursor-pointer w-full py-4 text-xl font-bold text-white bg-[#1090D8] rounded-lg">Calculate</button>
+            </div>
+            <!-- Ellipse Card -->
+            <div
+                class="flex flex-col w-full shadow-sm justify-center text-center hover:bg-[#FDD3D3] px-[2.7rem] py-[3.12rem] rounded-lg border border-[rgba(17,17,17,0.10)]">
+                <img src="images/ellipse.png" alt="ellipse"
+                    class="rounded-xl mb-[3.06rem] h-[12.125rem] xl:h-[15rem]" />
+                <h2 class="text[1.5625rem] text-[#414141] font-bold mb-[0.62rem]">Ellipse</h2>
+                <p class="mb-[1.38rem] text-base text-[#414141] font-normal">Area (A) = &pi; X a X b</p>
+                <div class="flex gap-5 items-center justify-center mb-6">
+                    <div>
+                        <input id="ellipse-major"
+                            class="w-24 text-base font-normal text-[#414141] bg-[#F1F1F1] rounded-[0.25rem] border-none py-3 px-4"
+                            type="text" placeholder="a">
+                        <span class="mb-[1.38rem] text-base text-[#414141] font-normal ml-1">cm</span>
+                    </div>
+                    <div>
+                        <input id="ellipse-minor"
+                            class="w-24 text-base font-normal text-[#414141] bg-[#F1F1F1] rounded-[0.25rem] border-none py-3 px-4"
+                            type="text" placeholder="b">
+                        <span class="mb-[1.38rem] text-base text-[#414141] font-normal ml-1">cm</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="mb-[1.38rem] text-base text-[#414141] font-normal">Area:<span id="ellipse-area"
+                            class="ml-12 mr-2"></span>cm<sup>2</sup></p>
+                </div>
+                <button id="clipse-btn"
+                    class="hover:bg-[#0b79b0] transition duration-300 cursor-pointer w-full py-4 text-xl font-bold text-white bg-[#1090D8] rounded-lg">Calculate</button>
+            </div>
+        </section>
+    </main>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
