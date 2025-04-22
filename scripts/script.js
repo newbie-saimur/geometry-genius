@@ -6,12 +6,16 @@ function getValueById(id) {
 
 function showError(id) {
     const value = document.getElementById(id);
-    value.innerText = 'Please Enter a Valid Number!';
+    value.classList.remove('hidden');
+    value.nextElementSibling.classList.add('hidden');
 }
 
 function setValueById(id, value) {
-    document.getElementById(id).innerText = value;
-    document.getElementById(id).classList.replace('ml-12','ml-2');
+    const message = document.getElementById(id);
+    message.parentElement.classList.remove('hidden')
+    message.parentElement.previousElementSibling.classList.add('hidden');
+    message.innerText = value;
+    message.classList.replace('ml-12','ml-2');
 }
 
 document.getElementById('triangle-btn').addEventListener('click', function(){
